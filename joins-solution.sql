@@ -51,7 +51,15 @@ JOIN addresses
 ON addresses.customer_id = customers.id
 JOIN orders
 ON orders.address_id = addresses.id
-GROUP BY customers.first_name
+GROUP BY customers.first_name;
+--
+SELECT customers.first_name, COUNT(first_name)
+FROM customers
+JOIN addresses
+ON addresses.customer_id = customers.id
+JOIN orders
+ON orders.address_id = addresses.id
+GROUP BY first_name;
 -- 6. How many customers do we have?
 SELECT COUNT(customers)
 FROM customers;
